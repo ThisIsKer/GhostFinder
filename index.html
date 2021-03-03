@@ -1,0 +1,36 @@
+<html>
+    <title>GhostFinder v1.0</title>
+    <head>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+        <!-- Core logic -->
+        <script src="scripts.js"></script>
+    </head>
+    <body onload="loadCore()">
+        <div class = "container">
+            <div class = "row">
+                <div class = "col-sm-4">
+                    <h4>Available ghosts:</h4>
+                    <ul id="ghostsList" class="list-group">
+                    </ul>
+                </div>
+                <div class = "col-sm-4">
+                    <h4>Actual clues:</h4>
+                    <ul id="cluesList" class="list-group">
+                    </ul>
+                </div>
+                <div class = "col-sm-4">
+                    <h4>Behavioural clues:</h4>
+                    <ul id="behavioursList" class="list-group">
+                    </ul>
+                </div>
+            </div>
+    </body>
+</html>
