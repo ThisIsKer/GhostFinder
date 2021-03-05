@@ -55,17 +55,29 @@ function hasSubArray(master, sub) {
 function getFilteredGhostsList(clues, removedClues) {
     return getGhostsCluesMap().filter(function (ghostClue) {
         if(clues.length > 0 && removedClues.length > 0){
-            return hasSubArray(ghostClue.clues, clues) && !hasSubArray(ghostClue.clues, removedClues);
+            return hasSubArray(ghostClue.clues, clues) && doesNotHaveClues(ghostClue.clues, removedClues);
         } else if(clues.length > 0) {
             return hasSubArray(ghostClue.clues, clues);
         } else if(removedClues.length > 0) {
-            return !hasSubArray(ghostClue.clues, removedClues);
+            return doesNotHaveClues(ghostClue.clues, removedClues);
         } else {
             return true;
         }
     }).map(function (ghost) {
         return ghost.id;
     });;
+}
+
+function doesNotHaveClues(clues, removedClues) {
+    var valid = true;
+    clues.forEach(function (clue) {
+        removedClues.forEach(function(removedClue) {
+            if(clue == removedClue){
+                valid = false;
+            }
+        })
+    })
+    return valid;
 }
 
 function getFilteredBehavioursList(ghostsList) {
